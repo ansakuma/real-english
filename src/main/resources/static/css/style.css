@@ -203,3 +203,16 @@ td form {
     border-radius: 4px;
     margin: 20px auto 20px;
 }
+.login-container {
+    width: 80%;
+    max-width: 640px;
+    margin: 20px auto;
+    border-radius: 4px;
+}
+
+.container {
+    width: 80%;
+    max-width: 640px;
+    margin: 20px 0 20px 50px;
+    border-radius: 4px;
+}
