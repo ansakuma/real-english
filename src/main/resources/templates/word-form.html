@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>新しいフレーズを追加</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+    <div th:replace="common/header :: header"></div>
+    <main>
+        <div class="word-form-container">
+            <h2>新しいフレーズを追加</h2>
+            <!-- 「条件」 ? 「tureのとき」 : 「falseのとき」 という、おなじみの「三項演算子」 -->
+            <form th:action="${word.id == null} ? @{/words} : @{/words/{id}/edit(id=${word.id})}" th:object="${word}"
+                method="post" class="word-form">
+                <p>リアルフレーズ <input type="text" th:field="*{english}" required maxlength="255"></p>
+                <p>意味 <input type="text" th:field="*{meaning}" required maxlength="255"></p>
+                <p>コメント <textarea th:field="*{comment}" rows="10"></textarea></p>
+                <p>カテゴリ
+                    <select th:field="*{category}" required>
+                        <option value="">選択してください</option>
+                        <option value="仕事中">仕事中</option>
+                        <option value="プライベート中">プライベート中</option>
+                        <option value="トラブル中">トラブル中</option>
+                    </select>
+                </p>
+                <button type="submit" class="add-word-button">追加</button>
+            </form>
+        </div>
+    </main>
+    <div th:replace="common/footer :: footer"></div>
+</body>
+
+</html>

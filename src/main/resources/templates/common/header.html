@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>header</title>
+</head>
+
+<body>
+    <header th:fragment="header" class="header">
+        <h1>みんなのリアルEnglish</h1>
+        <div class="header-right">
+            <a th:href="@{/mypage}" class="mypage-button">マイページ</a>
+            <div th:if="${session.loginUser != null}">
+                <p>ユーザー名：<span th:text="${session.loginUser.username}"></span></p>
+                <a th:href="@{/logout}" class="login-button">ログアウト</a>
+            </div>
+            <a th:if="${session.loginUser == null}" th:href="@{/login}" class="login-button">ログイン</a>
+        </div>
+    </header>
+</body>
+
+</html>

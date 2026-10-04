@@ -1,0 +1,205 @@
+body {
+    margin: 0;
+    display: flex; 
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 5px 32px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.header-right div {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+
+.footer {
+    background-color: #1a1a1a;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    margin-top: auto;
+}
+
+.login-button, 
+.mypage-button {
+    background-color: rgb(47, 47, 255);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    display: block;
+    margin: 20px;
+}
+
+.word-table {
+    width: 90%;
+    margin: 20px auto 20px;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.word-table th,
+.word-table td {
+    border: 2px solid #a9a9a9;
+    padding: 10px;
+    overflow-wrap: break-word;
+}
+.word-table th:nth-child(1) { width: 20%; }
+.word-table th:nth-child(2) { width: 20%; }
+.word-table th:nth-child(3) { width: 39%; }
+.word-table th:nth-child(4) { width: 17%; }
+.word-table th:nth-child(5) { width: 7%; }
+
+.word-table th {
+    background-color: #787878;
+    color: #fff;
+}
+
+.word-table tr:nth-child(even) td {
+    background-color: #f2f2f2;
+}
+
+.register-link {
+    display: inline-block;
+    background-color: green;
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 20px;
+}
+
+.container {
+    display: flex;
+    width: 90%;
+    border-radius: 4px;
+}
+
+.add-word-button{
+    background-color: green;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 20px;
+}
+
+.back-to-top-button {
+    background-color: rgb(47, 47, 255);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 20px;
+}
+
+
+.message {
+    color: green;
+    padding: 10px;
+    border-radius: 4px;
+    margin: 20px auto 20px;
+}
+
+.word-table th:nth-child(5) { width: 8%; }
+
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.edit-button,
+.delete-button {
+    display: block;
+    width: 72px;
+    box-sizing: border-box;
+    margin: 2px;
+    padding: 8px 0;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 14px;
+    line-height: 1.2;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.edit-button {
+    background-color: green;
+}
+
+.delete-button {
+    background-color: red;
+}
+
+td form {
+    width: 72px;
+    margin: 0;
+}
+
+.delete-button {
+    width: 100%;
+}
+/* フレーズ追加フォームのスタイル */
+.word-form-container {
+    width: 80%;
+    max-width: 640px;
+    margin: 20px auto;
+    border-radius: 4px;
+}
+
+.word-form input[type="text"],
+.word-form textarea,
+.word-form select {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 16px;
+    padding: 8px;
+}
+
+.register-form {
+    width: 80%;
+    max-width: 640px;
+    margin: 20px auto;
+    border-radius: 4px;
+}
+
+.register-button {
+    background-color: green;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 20px;
+}
+.error {
+    color: red;
+    padding: 10px;
+    border-radius: 4px;
+    margin: 20px auto 20px;
+}

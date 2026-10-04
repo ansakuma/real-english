@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Real English</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+
+    <div th:replace="common/header :: header"></div>
+
+    <main>
+        <table class="word-table">
+            <tr>
+                <th>リアルフレーズ</th>
+                <th>意味</th>
+                <th>コメント</th>
+                <th>カテゴリ</th>
+                <th>投稿者</th>
+            </tr>
+            <tr th:each="word : ${words}">
+                <td th:text="${word.english}"></td>
+                <td th:text="${word.meaning}"></td>
+                <td th:text="${word.comment}"></td>
+                <td th:text="${word.category}"></td>
+                <!-- user.usernameはwordオブジェクト経由で、登録したユーザーのusernameを表示 -->
+                <td th:text="${word.user.username}"></td>
+            </tr>
+
+        </table>
+
+    </main>
+
+    <div th:replace="common/footer :: footer"></div>
+
+</body>
+
+</html>
