@@ -11,7 +11,7 @@
     <div th:replace="common/header :: header"></div>
     <main>
         <div class="word-form-container">
-            <h2>新しいフレーズを追加</h2>
+            <h2 th:text="${word.id == null} ? '新しいフレーズを追加' : 'フレーズを編集'">新しいフレーズを追加</h2>
             <!-- 「条件」 ? 「tureのとき」 : 「falseのとき」 という、おなじみの「三項演算子」 -->
             <form th:action="${word.id == null} ? @{/words} : @{/words/{id}/edit(id=${word.id})}" th:object="${word}"
                 method="post" class="word-form">
@@ -26,7 +26,7 @@
                         <option value="トラブル中">トラブル中</option>
                     </select>
                 </p>
-                <button type="submit" class="add-word-button">追加</button>
+                <button type="submit" class="add-word-button">登録</button>
             </form>
         </div>
     </main>
