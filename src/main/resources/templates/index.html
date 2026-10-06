@@ -12,6 +12,7 @@
     <div th:replace="common/header :: header"></div>
 
     <main>
+        <p th:if="${message}" th:text="${message}" class="message"></p>
         <table class="word-table">
             <tr>
                 <th>リアルフレーズ</th>

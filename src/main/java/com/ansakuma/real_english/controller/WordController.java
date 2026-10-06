@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.ansakuma.real_english.RealEnglishApplication;
 import com.ansakuma.real_english.entity.User;
 import com.ansakuma.real_english.entity.Word;
 import com.ansakuma.real_english.repository.WordRepository;
@@ -19,14 +18,10 @@ import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class WordController {
-    private final RealEnglishApplication realEnglishApplication;
-    private final LoginController loginController;
     private final WordRepository wordRepository;//privateはクラス内でしかアクセスできない。finalは変数の値を変更できない。ここでは変数を宣言している。
     //コンストラクタインジェクション。WordRepositoryを注入。
-    public WordController(WordRepository wordRepository, LoginController loginController, RealEnglishApplication realEnglishApplication) {
+    public WordController(WordRepository wordRepository) {
         this.wordRepository = wordRepository;
-        this.loginController = loginController;
-        this.realEnglishApplication = realEnglishApplication;
     }
     //単語一覧ページを表示する
     @GetMapping("/")
@@ -47,7 +42,6 @@ public class WordController {
         }
         //ログインユーザーの単語を日付順に並べ替えて取得する
         List<Word> words = wordRepository.findByUserOrderByCreatedAtDesc(loginUser);
-        model.addAttribute("loginUser", loginUser);
         model.addAttribute("words", words);
         return "mypage";
     }

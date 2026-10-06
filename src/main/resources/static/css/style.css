@@ -64,7 +64,9 @@ body {
 .word-table th:nth-child(2) { width: 20%; }
 .word-table th:nth-child(3) { width: 39%; }
 .word-table th:nth-child(4) { width: 17%; }
-.word-table th:nth-child(5) { width: 7%; }
+.word-table th:nth-child(5) {
+    width: 8%;
+}
 
 .word-table th {
     background-color: #787878;
@@ -122,12 +124,7 @@ body {
 
 .word-table th:nth-child(5) { width: 8%; }
 
-.action-buttons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
+
 
 .edit-button,
 .delete-button {

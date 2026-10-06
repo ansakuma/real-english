@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.ansakuma.real_english.entity.User;
 import com.ansakuma.real_english.repository.UserRepository;
@@ -51,7 +52,7 @@ public class LoginController {
     }
     //ユーザー登録処理を行う
     @PostMapping("/register")
-    public String register(User user, Model model, String passwordConfirm) {
+    public String register(User user, Model model, String passwordConfirm, RedirectAttributes redirectAttributes) {
         //ユーザー名やパスワードがnull、または、空文字の場合
         if (user.getUsername() == null || user.getUsername().isBlank()
             || user.getPassword() == null || user.getPassword().isBlank()) {
@@ -70,7 +71,7 @@ public class LoginController {
         }
         //ユーザーを保存する
         userRepository.save(user);
-        model.addAttribute("message", "ユーザー登録が完了しました");
-        return "redirect:/login";
+        redirectAttributes.addFlashAttribute("message", "ユーザー登録が完了しました");
+        return "redirect:/";
     }
 }
