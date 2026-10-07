@@ -29,6 +29,10 @@
 
 ![ログイン画面](docs/login.png)
 
+## ユーザー新規登録画面
+
+![新規登録画面](docs/register.png)
+
 ## ログイン後の一覧画面
 
 ![ログイン後の一覧画面](docs/after-login.png)
@@ -45,6 +49,3 @@
 
 ![フレーズ編集画面](docs/edit.png)
 
-## 新規登録画面
-
-![新規登録画面](docs/register.png)
