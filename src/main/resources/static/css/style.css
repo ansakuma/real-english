@@ -35,6 +35,7 @@ body {
     margin-top: auto;
 }
 
+/* ログインボタンとマイページボタンのスタイル */
 .login-button, 
 .mypage-button {
     background-color: rgb(47, 47, 255);
@@ -42,11 +43,22 @@ body {
     padding: 8px 16px;
     border-radius: 4px;
     text-decoration: none;
+    border: none;
     cursor: pointer;
     display: block;
-    margin: 20px;
+    margin: 20px 20px 20px 0;
+}
+.register-link {
+    background-color: green;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 20px 20px 20px 0;
 }
 
+/* 単語一覧テーブルのスタイル */
 .word-table {
     width: 90%;
     margin: 20px auto 20px;
@@ -77,17 +89,6 @@ body {
     background-color: #f2f2f2;
 }
 
-.register-link {
-    display: inline-block;
-    background-color: green;
-    color: white;
-    text-decoration: none;
-    padding: 8px 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    margin: 20px;
-}
-
 .container {
     display: flex;
     width: 90%;
@@ -101,7 +102,8 @@ body {
     border-radius: 4px;
     text-decoration: none;
     cursor: pointer;
-    margin: 20px;
+    margin: 20px 20px 20px 0;
+        border: none;
 }
 
 .back-to-top-button {
@@ -178,7 +180,8 @@ td form {
     padding: 8px;
 }
 
-.register-form {
+/* 新規登録フォームのスタイル */
+.register-container {
     width: 80%;
     max-width: 640px;
     margin: 20px auto;
@@ -192,7 +195,8 @@ td form {
     border-radius: 4px;
     text-decoration: none;
     cursor: pointer;
-    margin: 20px;
+    margin: 20px 20px 20px 0;
+        border: none;
 }
 .error {
     color: red;
@@ -207,9 +211,37 @@ td form {
     border-radius: 4px;
 }
 
-.container {
+.back-to-login-button {
+    background-color: rgb(47, 47, 255);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 20px 20px 20px 0;
+    border: none;
+}
+
+/* マイページフォームの見出しとボタンんの箱*/
+.mypage-container {
     width: 80%;
     max-width: 640px;
     margin: 20px 0 20px 50px;
     border-radius: 4px;
+}
+/* 検索フォームのスタイル */
+.search-form {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 20px 20px 20px 60px;
+    border-radius: 4px;
+}
+
+.search-select {
+    width: 30%;
+    border-radius: 4px;
+    border: 1px solid #919191;
+    font-size: 16px;
+    padding: 3px;
 }

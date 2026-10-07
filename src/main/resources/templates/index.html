@@ -12,6 +12,18 @@
     <div th:replace="common/header :: header"></div>
 
     <main>
+        <form th:action="@{/search}" method="get" class="search-form">
+            <p>カテゴリー：</p>
+            <select name="category" class="search-select">
+                <option value="">すべて</option>
+                <option value="仕事中" th:selected="${category == '仕事中'}">仕事中</option>
+                <option value="プライベート中" th:selected="${category == 'プライベート中'}">プライベート中</option>
+                <option value="トラブル中" th:selected="${category == 'トラブル中'}">トラブル中</option>
+                <option value="食事中" th:selected="${category == '食事中'}">食事中</option>
+                <option value="その他" th:selected="${category == 'その他'}">その他</option>
+            </select>
+            <button type="submit">検索</button>
+        </form>
         <p th:if="${message}" th:text="${message}" class="message"></p>
         <table class="word-table">
             <tr>

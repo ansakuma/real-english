@@ -31,6 +31,18 @@ public class WordController {
         model.addAttribute("words", words);
         return "index";//index.htmlを返す。
     }
+    @GetMapping("/search")
+    public String serch(String category,Model model) {
+        List<Word> words;
+        if(category == null || category.isBlank()){
+            words = wordRepository.findAllByOrderByCreatedAtDesc();
+        } else{
+            words = wordRepository.findByCategoryOrderByCreatedAtDesc(category);
+        }
+        model.addAttribute("words", words);
+        model.addAttribute("category", category);
+        return "index";
+    }
 
     @GetMapping("/mypage")
     public String mypage(HttpSession session, Model model) {
@@ -134,8 +146,7 @@ public class WordController {
         }
         return "redirect:/mypage";
     }
-    
-
+  
 
 
 }

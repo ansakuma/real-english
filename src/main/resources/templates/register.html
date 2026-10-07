@@ -9,7 +9,7 @@
 
 <body>
     <main>
-        <div class="register-form">
+        <div class="register-container">
             <h2>新規登録</h2>
             <p th:if="${error}" th:text="${error}" class="error"></p>
             <form th:action="@{/register}" method="post">
@@ -18,7 +18,7 @@
                 <p>パスワード確認 <input type="password" name="passwordConfirm" required></p>
                 <button type="submit" class="register-button">登録</button>
             </form>
-            <a th:href="@{/login}">ログインへ戻る</a>
+            <a th:href="@{/login}" class="back-to-login-button">ログインへ戻る</a>
         </div>
     </main>
 </body>

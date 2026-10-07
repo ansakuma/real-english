@@ -10,6 +10,7 @@ import com.ansakuma.real_english.entity.Word;
 public interface WordRepository extends JpaRepository<Word, Integer>{
     List<Word> findAllByOrderByCreatedAtDesc();//createdAtを使って単語を降順に並べ替えるメソッド。未来（大きい数字）の日付が先に来る。
     List<Word> findByUserOrderByCreatedAtDesc(User user);//userを使って単語を降順に並べ替えるメソッド。
+    List<Word> findByCategoryOrderByCreatedAtDesc(String category);//categoryを使って単語を降順に並べ替えるメソッド。
 }
     
 
